@@ -1,0 +1,19 @@
+{
+  "name": "calculator-app",
+  "version": "1.0.0",
+  "description": "Calculator app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iPavelGeorgiev/calculator-app.git"
+  },
+  "author": "Pavel Georgiev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iPavelGeorgiev/calculator-app/issues"
+  },
+  "homepage": "https://github.com/iPavelGeorgiev/calculator-app#readme"
+}
