@@ -1,0 +1,15 @@
+/node_modules
+/dist
+
+style-guide.md
+
+*.sketch
+*.fig
+*.xd
+
+.DS_Store
+
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
