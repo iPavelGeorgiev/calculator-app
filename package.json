@@ -3,9 +3,52 @@
   "version": "1.0.0",
   "description": "Calculator app",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "browser-sync": "^2.27.10",
+    "copyfiles": "^2.4.1",
+    "cssnano": "^5.1.14",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "gh-pages": "^4.0.0",
+    "mkdirp": "^1.0.4",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^10.0.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.55.0"
   },
+  "scripts": {
+    "clean": "rimraf dist",
+    "gh-pages": "gh-pages -d dist",
+    "cssnano": "postcss -u cssnano -r --no-map dist/css/*.css",
+    "autoprefixer": "postcss -u autoprefixer -r dist/css/*.css",
+    "scss": "sass --no-source-map src/scss:dist/css",
+    "serve": "browser-sync start --server dist --files dist",
+    "format:prettier": "prettier --write \"{src/js,src/scss}/**/*.{js,scss}\"",
+    "format:eslint": "eslint src/js",
+    "format": "run-s format:*",
+    "build:html": "copyfiles -u 1 ./src/*.html dist",
+    "build:css": "run-s scss autoprefixer",
+    "build:js": "copyfiles -u 1 ./src/js/**/* dist",
+    "build:images": "copyfiles -u 1 ./src/img/**/* dist",
+    "build": "run-s build:*",
+    "watch:html": "onchange \"src/*.html\" -- npm run build:html",
+    "watch:css": "onchange \"src/scss\" -- run-s build:css",
+    "watch:js": "onchange \"src/js\" -- run-s build:js",
+    "watch:images": "onchange \"src/img\" -- run-s build:images",
+    "watch": "run-p serve watch:*",
+    "start": "run-s build watch",
+    "deploy": "run-s format clean build cssnano gh-pages"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 0.5%",
+    "not dead"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iPavelGeorgiev/calculator-app.git"
