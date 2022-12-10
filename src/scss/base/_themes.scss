@@ -1,0 +1,67 @@
+@use 'sass:color';
+
+.theme-one {
+  // Backgrounds
+  --clr-background-main: hsl(222, 26%, 31%);
+  --clr-background-toggle-and-keypad: hsl(223, 31%, 20%);
+  --clr-background-display: hsl(224, 36%, 15%);
+
+  // Keys
+  --clr-background-keys-primary: hsl(30, 25%, 89%);
+  --clr-shadow-keys-primary: hsl(28, 16%, 65%);
+
+  --clr-background-keys-secondary: hsl(225, 21%, 49%);
+  --clr-shadow-keys-secondary: hsl(224, 28%, 35%);
+
+  --clr-background-keys-tertiary: hsl(6, 63%, 50%);
+  --clr-shadow-keys-tertiary: hsl(6, 70%, 34%);
+
+  // Text
+  --clr-text: hsl(0, 0%, 100%);
+  --clr-text-keys-primary: hsl(221, 14%, 31%);
+  --clr-text-keys-secondary: hsl(0, 0%, 100%);
+}
+
+.theme-two {
+  // Backgrounds
+  --clr-background-main: hsl(0, 0%, 90%);
+  --clr-background-toggle-and-keypad: hsl(0, 5%, 81%);
+  --clr-background-display: hsl(0, 0%, 93%);
+
+  // Keys
+  --clr-background-keys-primary: hsl(45, 7%, 89%);
+  --clr-shadow-keys-primary: hsl(35, 11%, 61%);
+
+  --clr-background-keys-secondary: hsl(185, 42%, 37%);
+  --clr-shadow-keys-secondary: hsl(185, 58%, 25%);
+
+  --clr-background-keys-tertiary: hsl(25, 98%, 40%);
+  --clr-shadow-keys-tertiary: hsl(25, 99%, 27%);
+
+  // Text
+  --clr-text: hsl(60, 10%, 19%);
+  --clr-text-keys-primary: hsl(60, 10%, 19%);
+  --clr-text-keys-secondary: hsl(0, 0%, 100%);
+}
+
+.theme-three {
+  // Backgrounds
+  --clr-background-main: hsl(268, 75%, 9%);
+  --clr-background-toggle-and-keypad: hsl(268, 71%, 12%);
+  --clr-background-display: hsl(268, 71%, 12%);
+
+  // Keys
+  --clr-background-keys-primary: hsl(268, 47%, 21%);
+  --clr-shadow-keys-primary: hsl(290, 70%, 36%);
+
+  --clr-background-keys-secondary: hsl(281, 89%, 26%);
+  --clr-shadow-keys-secondary: hsl(285, 91%, 52%);
+
+  --clr-background-keys-tertiary: hsl(176, 100%, 44%);
+  --clr-shadow-keys-tertiary: hsl(177, 92%, 70%);
+
+  // Text
+  --clr-text: hsl(52, 100%, 62%);
+  --clr-text-keys-primary: hsl(52, 100%, 62%);
+  --clr-text-keys-secondary: hsl(0, 0%, 100%);
+}
