@@ -1,0 +1,73 @@
+.theme-switch {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  background-color: var(--clr-background-toggle-and-keypad);
+  border-radius: 5rem;
+  padding: 0.5rem 0.2rem;
+}
+
+.theme-switch:has(:focus-visible) {
+  outline: 0.1rem solid var(--clr-text);
+  outline-offset: 0.3rem;
+}
+
+.theme-switch-heading {
+  position: absolute;
+  top: 0.4rem;
+  left: -6.7rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+.theme-switch-item {
+  position: relative;
+  width: 2.2rem;
+  height: 1.4rem;
+}
+
+.theme-switch-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -2.7rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.theme-switch-input {
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: inherit;
+  cursor: pointer;
+}
+
+.theme-switch-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--clr-background-keys-tertiary);
+  transition: left 0.3s;
+  pointer-events: none;
+}
+
+.theme-switch:has(:focus-visible) .theme-switch-marker {
+  filter: brightness(120%);
+}
+
+body.theme-one .theme-switch-marker {
+  left: 50%;
+}
+
+body.theme-two .theme-switch-marker {
+  left: 150%;
+}
+
+body.theme-three .theme-switch-marker {
+  left: 250%;
+}

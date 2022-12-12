@@ -8,12 +8,28 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/main.css">
+  <script src="./js/theme.js" type="module"></script>
   <title>Calculator app</title>
 </head>
 <body>
   <header class="header wrapper">
     <h1 class="header-heading">calc</h1>
-
+    <fieldset class="theme-switch">
+      <legend class="theme-switch-heading">THEME</legend>
+      <div class="theme-switch-item">
+        <label for="theme-one" class="theme-switch-label">1</label>
+        <input type="radio" name="theme" id="theme-one" class="theme-switch-input" value="theme-one" checked>
+        <div aria-hidden="true" class="theme-switch-marker"></div>
+      </div>
+      <div class="theme-switch-item">
+        <label for="theme-two" class="theme-switch-label">2</label>
+        <input type="radio" name="theme" id="theme-two" class="theme-switch-input" value="theme-two">
+      </div>
+      <div class="theme-switch-item">
+        <label for="theme-three" class="theme-switch-label">3</label>
+        <input type="radio" name="theme" id="theme-three" class="theme-switch-input" value="theme-three">
+      </div>
+    </fieldset>
   </header>
 </body>
 </html>
