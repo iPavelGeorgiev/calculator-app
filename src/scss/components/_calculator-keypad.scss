@@ -1,0 +1,72 @@
+@use '../abstracts/breakpoints' as *;
+
+.calculator-keypad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(5rem, 1fr));
+  grid-auto-rows: 6.3rem;
+  gap: 2.5rem;
+  padding: 3.1rem;
+  background-color: var(--clr-background-toggle-and-keypad);
+  border-radius: 1rem;
+
+  @include breakpoint('max', 'sm') {
+    gap: 1.3rem;
+    padding: 2.4rem;
+  }
+}
+
+.key {
+  font-size: 4rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--clr-background-keys-primary);
+  color: var(--clr-text-keys-primary);
+  box-shadow: inset 0 -0.4rem var(--clr-shadow-keys-primary);
+  cursor: pointer;
+
+  @include breakpoint('max', 'sm') {
+    font-size: 3.3rem;
+    border-radius: 0.6rem;
+  }
+}
+
+.key:focus-visible {
+  outline: 0.1rem solid var(--clr-text);
+  outline-offset: 0.3rem;
+}
+
+.key:hover {
+  filter: brightness(120%);
+}
+
+.delete,
+.reset {
+  font-size: 2.7rem;
+  color: var(--clr-text-keys-secondary);
+  background-color: var(--clr-background-keys-secondary);
+  box-shadow: inset 0 -0.4rem var(--clr-shadow-keys-secondary);
+
+  @include breakpoint('max', 'sm') {
+    font-size: 1.9rem;
+  }
+}
+
+.reset {
+  grid-column: 1 / span 2;
+}
+
+.equal-sign {
+  grid-column: 3 / span 2;
+  font-size: 3rem;
+  background-color: var(--clr-background-keys-tertiary);
+  color: var(--clr-text-keys-secondary);
+  box-shadow: inset 0 -0.4rem var(--clr-shadow-keys-tertiary);
+
+  @include breakpoint('max', 'sm') {
+    font-size: 1.9rem;
+  }
+}
+
+.theme-three .equal-sign {
+  color: hsl(60, 10%, 19%);
+}
