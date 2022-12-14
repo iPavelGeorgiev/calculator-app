@@ -9,12 +9,11 @@ body {
   font-family: vars.$font-family-base;
   font-weight: vars.$font-weight-bold;
   font-size: vars.$font-size-base-desktop;
-  line-height: vars.$line-height-base;
   background: var(--clr-background-main);
   color: var(--clr-text);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
