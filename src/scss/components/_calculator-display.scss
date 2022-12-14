@@ -1,0 +1,43 @@
+@use '../abstracts/breakpoints' as *;
+
+.calculator-display {
+  padding: 2rem 2.8rem;
+  background-color: var(--clr-background-display);
+  border-radius: 1rem;
+  text-align: end;
+  margin-bottom: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 13rem;
+
+  @include breakpoint('max', 'sm') {
+    padding: 1.6rem 2.3rem;
+    min-height: 9.4rem;
+  }
+}
+
+.calculator-previous-operand,
+.calculator-current-operand {
+  letter-spacing: 0.1rem;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.calculator-previous-operand {
+  font-size: 2.5rem;
+  opacity: 0.5;
+
+  @include breakpoint('max', 'sm') {
+    font-size: 2.1rem;
+  }
+}
+
+.calculator-current-operand {
+  font-size: 5.2rem;
+
+  @include breakpoint('max', 'sm') {
+    font-size: 3.5rem;
+  }
+}
