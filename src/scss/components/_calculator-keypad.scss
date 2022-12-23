@@ -96,3 +96,23 @@
     font-size: 2rem;
   }
 }
+
+.history {
+  font-size: 2.7rem;
+  background-color: var(--clr-background-keys-tertiary);
+  color: var(--clr-text-keys-secondary);
+  box-shadow: inset 0 -0.4rem var(--clr-shadow-keys-tertiary);
+
+  @include breakpoint('max', 'sm') {
+    font-size: 2.1rem;
+  }
+}
+
+.history i {
+  pointer-events: none;
+}
+
+.theme-three .equal-sign,
+.theme-three .history {
+  color: hsl(60, 10%, 19%);
+}
