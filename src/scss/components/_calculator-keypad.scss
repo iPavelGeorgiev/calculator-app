@@ -1,4 +1,5 @@
 @use '../abstracts/breakpoints' as *;
+@use '../abstracts/variables' as vars;
 
 .calculator-keypad {
   display: grid;
@@ -9,8 +10,18 @@
   background-color: var(--clr-background-toggle-and-keypad);
   border-radius: 1rem;
 
+  @include breakpoint(max-height, 850px) {
+    gap: 2rem;
+    padding: 2.7rem;
+  }
+
+  @include breakpoint(max-height, 780px) {
+    grid-auto-rows: 5.3rem;
+  }
+
   @include breakpoint('max', 'sm') {
-    gap: 1.3rem;
+    grid-auto-rows: 5.3rem;
+    gap: 1.4rem;
     padding: 2.4rem;
   }
 }
@@ -28,91 +39,100 @@
     font-size: 3.3rem;
     border-radius: 0.6rem;
   }
-}
 
-.key:focus-visible {
-  outline: 0.1rem solid var(--clr-text);
-  outline-offset: 0.3rem;
-}
-
-.key:hover {
-  filter: brightness(120%);
-}
-
-.delete,
-.reset {
-  font-size: 2.7rem;
-  color: var(--clr-text-keys-secondary);
-  background-color: var(--clr-background-keys-secondary);
-  box-shadow: inset 0 -0.4rem var(--clr-shadow-keys-secondary);
-
-  @include breakpoint('max', 'sm') {
-    font-size: 1.9rem;
+  &:focus-visible {
+    outline: 0.1rem solid var(--clr-text);
+    outline-offset: 0.3rem;
+    filter: vars.$filter-brightness;
   }
-}
 
-.reset {
-  grid-column: 1 / span 2;
-}
-
-.equal-sign {
-  font-size: 3rem;
-  background-color: var(--clr-background-keys-tertiary);
-  color: var(--clr-text-keys-secondary);
-  box-shadow: inset 0 -0.4rem var(--clr-shadow-keys-tertiary);
-
-  @include breakpoint('max', 'sm') {
-    font-size: 1.9rem;
+  &:hover {
+    filter: vars.$filter-brightness;
   }
-}
 
-.theme-three .equal-sign {
-  color: hsl(60, 10%, 19%);
-}
+  &.operator[value='+/-'],
+  &.operator[value='%'] {
+    font-size: 3.5rem;
 
-.operator[value='%'] {
-  font-size: 3.5rem;
+    @include breakpoint('max', 'sm') {
+      font-size: 3rem;
+    }
+  }
 
-  @include breakpoint('max', 'sm') {
+  &.operator[value='+/-'] {
+    letter-spacing: -0.3rem;
+  }
+
+  &.operator[value='^'] {
+    font-size: 3.8rem;
+
+    @include breakpoint('max', 'sm') {
+      font-size: 3.1rem;
+    }
+  }
+
+  &.operator[value='^'] sup {
+    font-size: 2.5rem;
+    vertical-align: super;
+    line-height: 0;
+    pointer-events: none;
+
+    @include breakpoint('max', 'sm') {
+      font-size: 2rem;
+    }
+  }
+
+  &.history {
+    font-size: 2.7rem;
+    background-color: var(--clr-background-keys-tertiary);
+    color: var(--clr-text-keys-secondary);
+    box-shadow: inset 0 -0.4rem var(--clr-shadow-keys-tertiary);
+
+    @include breakpoint('max', 'sm') {
+      font-size: 2.1rem;
+    }
+  }
+
+  &.history i {
+    pointer-events: none;
+  }
+
+  &.delete,
+  &.reset {
+    font-size: 2.7rem;
+    color: var(--clr-text-keys-secondary);
+    background-color: var(--clr-background-keys-secondary);
+    box-shadow: inset 0 -0.4rem var(--clr-shadow-keys-secondary);
+
+    @include breakpoint('max', 'sm') {
+      font-size: 1.9rem;
+    }
+  }
+
+  &.delete i {
+    pointer-events: none;
+  }
+
+  &.reset {
+    grid-column: 1 / span 2;
+  }
+
+  &.equal-sign {
+    grid-column: 3 / span 2;
     font-size: 3rem;
+    background-color: var(--clr-background-keys-tertiary);
+    color: var(--clr-text-keys-secondary);
+    box-shadow: inset 0 -0.4rem var(--clr-shadow-keys-tertiary);
+
+    @include breakpoint('max', 'sm') {
+      font-size: 2.2rem;
+    }
   }
 }
 
-.operator[value='^'] {
-  font-size: 3.8rem;
-
-  @include breakpoint('max', 'sm') {
-    font-size: 3.1rem;
+.theme-three {
+  .key.equal-sign,
+  .key.history {
+    color: hsl(60, 10%, 19%);
   }
-}
-
-.operator[value='^'] sup {
-  font-size: 2.5rem;
-  vertical-align: super;
-  line-height: 0;
-  pointer-events: none;
-
-  @include breakpoint('max', 'sm') {
-    font-size: 2rem;
-  }
-}
-
-.history {
-  font-size: 2.7rem;
-  background-color: var(--clr-background-keys-tertiary);
-  color: var(--clr-text-keys-secondary);
-  box-shadow: inset 0 -0.4rem var(--clr-shadow-keys-tertiary);
-
-  @include breakpoint('max', 'sm') {
-    font-size: 2.1rem;
-  }
-}
-
-.history i {
-  pointer-events: none;
-}
-
-.theme-three .equal-sign,
-.theme-three .history {
-  color: hsl(60, 10%, 19%);
 }
