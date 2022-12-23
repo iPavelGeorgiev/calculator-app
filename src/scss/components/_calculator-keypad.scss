@@ -77,3 +77,22 @@
     font-size: 3rem;
   }
 }
+
+.operator[value='^'] {
+  font-size: 3.8rem;
+
+  @include breakpoint('max', 'sm') {
+    font-size: 3.1rem;
+  }
+}
+
+.operator[value='^'] sup {
+  font-size: 2.5rem;
+  vertical-align: super;
+  line-height: 0;
+  pointer-events: none;
+
+  @include breakpoint('max', 'sm') {
+    font-size: 2rem;
+  }
+}
