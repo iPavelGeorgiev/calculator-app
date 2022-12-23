@@ -69,3 +69,11 @@
 .theme-three .equal-sign {
   color: hsl(60, 10%, 19%);
 }
+
+.operator[value='%'] {
+  font-size: 3.5rem;
+
+  @include breakpoint('max', 'sm') {
+    font-size: 3rem;
+  }
+}
