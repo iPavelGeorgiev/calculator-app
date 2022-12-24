@@ -1,8 +1,14 @@
+@use '../abstracts/breakpoints' as *;
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2.4rem;
+
+  @include breakpoint(max-height, 850px) {
+    margin-bottom: 1.4rem;
+  }
 }
 
 .header-heading {
