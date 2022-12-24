@@ -12,6 +12,10 @@
   gap: 0.6rem;
   min-height: 13rem;
 
+  @include breakpoint(max-height, 850px) {
+    margin-bottom: 1.4rem;
+  }
+
   @include breakpoint('max', 'sm') {
     padding: 1.6rem 2.3rem;
     min-height: 9.4rem;
