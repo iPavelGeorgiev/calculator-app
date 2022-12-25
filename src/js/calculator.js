@@ -11,6 +11,37 @@ class Calculator {
     this.operatorSign = '';
   }
 
+  static compute(previousOperand, currentOperand, operator) {
+    const a = utilities.toNumber(previousOperand);
+    const b = utilities.toNumber(currentOperand);
+    let computation;
+
+    switch (operator) {
+      case '+':
+        computation = a + b;
+        break;
+      case '-':
+        computation = a - b;
+        break;
+      case '*':
+        computation = a * b;
+        break;
+      case '/':
+        computation = a / b;
+        break;
+      case '%':
+        computation = a % b;
+        break;
+      case '^':
+        computation = a ** b;
+        break;
+      default:
+        computation = 0;
+    }
+
+    return Number.isFinite(computation) ? computation : 0;
+  }
+
   inputDigit(digit) {
     if (this.waitingForSecondOperand) {
       this.waitingForSecondOperand = false;
