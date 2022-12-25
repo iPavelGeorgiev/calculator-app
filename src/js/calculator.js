@@ -42,6 +42,17 @@ class Calculator {
     return Number.isFinite(computation) ? computation : 0;
   }
 
+  inputDecimal(dot) {
+    if (this.waitingForSecondOperand) {
+      this.currentOperand = '0.';
+      return;
+    }
+
+    if (!this.currentOperand.includes(dot)) {
+      this.currentOperand += dot;
+    }
+  }
+
   handleOperator(nextOperator, nextOperatorSign) {
     if (nextOperator === '=') {
       if (!this.operator || this.waitingForSecondOperand) return;
@@ -125,6 +136,8 @@ calcKeypadSel.addEventListener('click', (e) => {
 
   if (e.target.classList.contains('operator')) {
     calculator.handleOperator(e.target.value, e.target.textContent);
+  } else if (e.target.classList.contains('decimal')) {
+    calculator.inputDecimal(e.target.value);
   } else {
     calculator.inputDigit(e.target.value);
   }
