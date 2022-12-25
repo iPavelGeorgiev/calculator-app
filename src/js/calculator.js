@@ -4,11 +4,7 @@ class Calculator {
   constructor(previousOperandSel, currentOperandSel) {
     this.previousOperandSel = previousOperandSel;
     this.currentOperandSel = currentOperandSel;
-    this.previousOperand = '';
-    this.currentOperand = '0';
-    this.waitingForSecondOperand = false;
-    this.operator = null;
-    this.operatorSign = '';
+    this.reset();
   }
 
   static compute(previousOperand, currentOperand, operator) {
@@ -40,6 +36,14 @@ class Calculator {
     }
 
     return Number.isFinite(computation) ? computation : 0;
+  }
+
+  reset() {
+    this.previousOperand = '';
+    this.currentOperand = '0';
+    this.waitingForSecondOperand = false;
+    this.operator = null;
+    this.operatorSign = '';
   }
 
   delete() {
@@ -145,6 +149,8 @@ calcKeypadSel.addEventListener('click', (e) => {
     calculator.inputDecimal(e.target.value);
   } else if (e.target.classList.contains('delete')) {
     calculator.delete();
+  } else if (e.target.classList.contains('reset')) {
+    calculator.reset();
   } else {
     calculator.inputDigit(e.target.value);
   }
