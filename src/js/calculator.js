@@ -24,6 +24,23 @@ class Calculator {
       this.currentOperand += digit;
     }
   }
+
+  updateDisplay() {
+    const previousOperandString = utilities.numberToLocaleString(this.previousOperand, 7);
+    const currentOperandString = utilities.numberToLocaleString(this.currentOperand, 7);
+
+    if (!Number.isNaN(parseFloat(this.previousOperand))) {
+      this.previousOperandSel.textContent = `${previousOperandString} ${this.operatorSign}`;
+    } else {
+      this.previousOperandSel.textContent = '';
+    }
+
+    if (this.currentOperand.endsWith('.')) {
+      this.currentOperandSel.textContent = `${currentOperandString}.`;
+    } else {
+      this.currentOperandSel.textContent = Number.isNaN(currentOperandString) ? '' : currentOperandString;
+    }
+  }
 }
 
 const previousOperandSel = document.querySelector('.calculator-previous-operand');
@@ -36,4 +53,5 @@ calcKeypadSel.addEventListener('click', (e) => {
   if (!e.target.matches('button')) return;
 
   calculator.inputDigit(e.target.value);
+  calculator.updateDisplay();
 });
