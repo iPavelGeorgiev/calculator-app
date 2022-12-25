@@ -42,6 +42,46 @@ class Calculator {
     return Number.isFinite(computation) ? computation : 0;
   }
 
+  handleOperator(nextOperator, nextOperatorSign) {
+    if (nextOperator === '=') {
+      if (!this.operator || this.waitingForSecondOperand) return;
+
+      const result = Calculator.compute(this.previousOperand, this.currentOperand, this.operator);
+
+      history.addToHistory(this.previousOperand, this.currentOperand, this.operatorSign, result);
+
+      this.previousOperand = '';
+      this.currentOperand = parseFloat(result.toFixed(7)).toString();
+      this.waitingForSecondOperand = false;
+      this.operatorSign = null;
+      this.operator = null;
+      return;
+    }
+
+    if (nextOperator === '+/-') {
+      this.currentOperand = this.currentOperand.startsWith('-')
+        ? this.currentOperand.slice(1)
+        : `-${this.currentOperand}`;
+      return;
+    }
+
+    if (this.operator && !this.waitingForSecondOperand) {
+      const result = Calculator.compute(this.previousOperand, this.currentOperand, this.operator);
+      this.previousOperand = parseFloat(result.toFixed(7)).toString();
+      this.currentOperand = '';
+      this.waitingForSecondOperand = true;
+    }
+
+    if (!this.operator) {
+      this.waitingForSecondOperand = true;
+      this.previousOperand = this.currentOperand;
+      this.currentOperand = '';
+    }
+
+    this.operatorSign = nextOperator === '^' ? '^' : nextOperatorSign;
+    this.operator = nextOperator;
+  }
+
   inputDigit(digit) {
     if (this.waitingForSecondOperand) {
       this.waitingForSecondOperand = false;
@@ -83,6 +123,11 @@ const calculator = new Calculator(previousOperandSel, currentOperandSel);
 calcKeypadSel.addEventListener('click', (e) => {
   if (!e.target.matches('button')) return;
 
-  calculator.inputDigit(e.target.value);
+  if (e.target.classList.contains('operator')) {
+    calculator.handleOperator(e.target.value, e.target.textContent);
+  } else {
+    calculator.inputDigit(e.target.value);
+  }
+
   calculator.updateDisplay();
 });
