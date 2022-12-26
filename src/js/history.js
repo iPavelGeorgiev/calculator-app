@@ -23,12 +23,25 @@ class History {
   openModal() {
     this.modalHistorySel.classList.remove('hidden');
   }
+
+  closeModal() {
+    this.modalHistorySel.classList.add('hidden');
+  }
+
+  closeModalOnOverlayClick(e) {
+    if (!e.target.classList.contains('modal-history')) return;
+    this.modalHistorySel.classList.add('hidden');
+  }
 }
 
 const modalHistorySel = document.querySelector('.modal-history');
 const modalHistoryComputationsSel = document.querySelector('.modal-history-computations');
+const btnCloseModal = document.querySelector('.btn-close-history');
 
 const history = new History(modalHistorySel, modalHistoryComputationsSel);
 history.loadInitialHistory();
+
+modalHistorySel.addEventListener('click', history.closeModalOnOverlayClick.bind(history));
+btnCloseModal.addEventListener('click', history.closeModal.bind(history));
 
 export default history;
