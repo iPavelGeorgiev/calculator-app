@@ -11,12 +11,13 @@
   <link rel="stylesheet" href="./css/main.css">
   <script src="./js/theme.js" type="module"></script>
   <script src="./js/utilities.js" type="module"></script>
+  <script src="./js/history.js" type="module"></script>
   <script src="./js/calculator.js" type="module"></script>
   <title>Calculator app</title>
 </head>
 <body>
   <header class="header wrapper">
-    <h1 class="header-heading">calc</h1>
+    <h1 class="header-heading" aria-label="Calculator">calc</h1>
     <fieldset class="theme-switch">
       <legend class="theme-switch-heading">THEME</legend>
       <div class="theme-switch-item">
@@ -64,6 +65,16 @@
       <button class="key operator" value="*">&times;</button>
       <button class="key reset" value="reset">RESET</button>
       <button class="key operator equal-sign" value="=">=</button>
+    </section>
+    <section class="modal-history hidden">
+      <div class="modal-history-content">
+        <header class="modal-history-header">
+          <h2 class="modal-history-heading">History</h2>
+          <button class="btn-delete-history"><i class="fa-solid fa-trash"></i></button>
+          <button class="btn-close-history"><i class="fa-solid fa-xmark"></i></button>
+        </header>
+        <div class="modal-history-computations"></div>
+      </div>
     </section>
   </main>
 </body>
