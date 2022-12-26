@@ -1,4 +1,5 @@
 import utilities from './utilities.js';
+import history from './history.js';
 
 class Calculator {
   constructor(previousOperandSel, currentOperandSel) {
@@ -49,6 +50,20 @@ class Calculator {
   delete() {
     this.currentOperand =
       this.currentOperand.length > 1 ? (this.currentOperand = this.currentOperand.slice(0, -1)) : '0';
+  }
+
+  inputDigit(digit) {
+    if (this.waitingForSecondOperand) {
+      this.waitingForSecondOperand = false;
+    }
+
+    if (this.currentOperand === '-0') {
+      this.currentOperand = `-${digit}`;
+    } else if (this.currentOperand === '0') {
+      this.currentOperand = digit;
+    } else {
+      this.currentOperand += digit;
+    }
   }
 
   inputDecimal(dot) {
@@ -102,20 +117,6 @@ class Calculator {
     this.operator = nextOperator;
   }
 
-  inputDigit(digit) {
-    if (this.waitingForSecondOperand) {
-      this.waitingForSecondOperand = false;
-    }
-
-    if (this.currentOperand === '-0') {
-      this.currentOperand = `-${digit}`;
-    } else if (this.currentOperand === '0') {
-      this.currentOperand = digit;
-    } else {
-      this.currentOperand += digit;
-    }
-  }
-
   updateDisplay() {
     const previousOperandString = utilities.numberToLocaleString(this.previousOperand, 7);
     const currentOperandString = utilities.numberToLocaleString(this.currentOperand, 7);
@@ -151,6 +152,8 @@ calcKeypadSel.addEventListener('click', (e) => {
     calculator.delete();
   } else if (e.target.classList.contains('reset')) {
     calculator.reset();
+  } else if (e.target.classList.contains('history')) {
+    history.openModal();
   } else {
     calculator.inputDigit(e.target.value);
   }

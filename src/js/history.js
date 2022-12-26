@@ -19,6 +19,10 @@ class History {
       this.modalHistoryComputationsSel.prepend(p);
     });
   }
+
+  openModal() {
+    this.modalHistorySel.classList.remove('hidden');
+  }
 }
 
 const modalHistorySel = document.querySelector('.modal-history');
