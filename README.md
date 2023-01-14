@@ -1,94 +1,95 @@
-# Frontend Mentor - Calculator app
+# Calculator app
 
-![Design preview for the Calculator app coding challenge](./design/desktop-preview.jpg)
+![Mockup of desktop hard mode view](design/desktop-preview.png)
 
-## Welcome! 👋
+## Overview
 
-Thanks for checking out this front-end coding challenge.
+The calculator app allows users to perform basic mathematical operations such as addition, subtraction, multiplication, division, modulo division, and exponentiation. In addition, the app includes a history feature that stores all previous calculations for easy reference. Users can also customize the appearance of the app by choosing from three different themes.
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+The selected theme and calculation history are saved as localStorage values, which allows users to retain their preferred theme and previous calculations even when the app is closed and reopened. This ensures that users can easily switch between themes and review their past calculations without having to start over every time they use the app.
 
-**To do this challenge, you need a good understanding of HTML, CSS and JavaScript.**
+### Screenshots
 
-## The challenge
+<details>
+  <summary>Desktop design: theme one</summary>
 
-Your challenge is to build out this calculator app and get it looking as close to the design as possible.
+  ![Screenshot of desktop calculator view (theme one)](design/desktop-design-calculator-1.png)
+  ![Screenshot of desktop history view (theme one)](design/desktop-design-history-1.png)
+</details>
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+<details>
+  <summary>Desktop design: theme two</summary>
 
-Your users should be able to:
+  ![Screenshot of desktop calculator view (theme two)](design/desktop-design-calculator-2.png)
+  ![Screenshot of desktop history view (theme two)](design/desktop-design-history-2.png)
+</details>
 
-- See the size of the elements adjust based on their device's screen size
-- Perform mathematical operations like addition, subtraction, multiplication, and division
-- Adjust the color theme based on their preference
-- **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
+<details>
+  <summary>Desktop design: theme three</summary>
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+  ![Screenshot of desktop calculator view (theme three)](design/desktop-design-calculator-3.png)
+  ![Screenshot of desktop history view (theme three)](design/desktop-design-history-3.png)
+</details>
+&nbsp;
+<details>
+  <summary>Mobile design: theme one</summary>
 
-## Where to find everything
+  ![Screenshot of mobile calculator view (theme one)](design/mobile-design-calculator-1.png)
+  ![Screenshot of mobile history view (theme one)](design/mobile-design-history-1.png)
+</details>
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+<details>
+  <summary>Mobile design: theme two</summary>
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+  ![Screenshot of mobile calculator view (theme two)](design/mobile-design-calculator-2.png)
+  ![Screenshot of mobile history view (theme two)](design/mobile-design-history-2.png)
+</details>
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+<details>
+  <summary>Mobile design: theme three</summary>
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+  ![Screenshot of mobile calculator view (theme three)](design/mobile-design-calculator-3.png)
+  ![Screenshot of mobile history view (theme three)](design/mobile-design-history-3.png)
+</details>
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### Built With
 
-## Building your project
+- Semantic HTML5 markup
+- SCSS
+- JavaScript
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+## Run Locally
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+Clone the project
 
-## Deploying your project
+```bash
+  git clone https://github.com/iPavelGeorgiev/calculator-app.git
+```
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+Go to the project directory
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+```bash
+  cd calculator-app
+```
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+Install dependencies
 
-## Create a custom `README.md`
+```bash
+  npm install
+```
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+Start the server
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+```bash
+  npm run start
+```
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+## Acknowledgements
 
-## Submitting your solution
+This [challenge](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29) was provided by [Frontend Mentor](https://www.frontendmentor.io), a platform that offers challenges to help developers practice and improve their frontend skills. Each challenge includes designs for both mobile and desktop, as well as assets and a style guide, to get you started. This provides an opportunity for developers to concentrate on the implementation without having to worry about the design.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+## Author
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+<p><a href="https://www.linkedin.com/in/ipavelgeorgiev/"><img align="center" src="https://i.ibb.co/6Jw1g19/linkedin-icon.png" alt="LinkedIn" height="auto" width="30"/></a>&nbsp;
+<a href="https://discord.com/users/621026020895621123"><img align="center" src="https://i.ibb.co/80bsWC9/discord-icon.png" alt="Discord" height="auto" width="30"/></a>&nbsp;
+<a href="https://www.frontendmentor.io/profile/iPavelGeorgiev"><img align="center" src="https://i.ibb.co/jZK7zYH/frontend-mentor-icon.png" alt="Frontend Mentor" height="auto" width="30"/></a></p>
