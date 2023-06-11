@@ -93,3 +93,7 @@ This [challenge](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N
 <p><a href="https://www.linkedin.com/in/ipavelgeorgiev/"><img align="center" src="https://i.ibb.co/6Jw1g19/linkedin-icon.png" alt="LinkedIn" height="auto" width="30"/></a>&nbsp;
 <a href="https://discord.com/users/621026020895621123"><img align="center" src="https://i.ibb.co/80bsWC9/discord-icon.png" alt="Discord" height="auto" width="30"/></a>&nbsp;
 <a href="https://www.frontendmentor.io/profile/iPavelGeorgiev"><img align="center" src="https://i.ibb.co/jZK7zYH/frontend-mentor-icon.png" alt="Frontend Mentor" height="auto" width="30"/></a></p>
+
+## :man_astronaut: Show your support
+
+Give a :star: if you like this project!
